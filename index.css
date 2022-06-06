@@ -1,0 +1,222 @@
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 100vw;
+	height: 100vh;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.topnav {
+	overflow: hidden;
+	background-color: #333;
+	position: fixed;
+	width: 100%;
+}
+
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.topnav a.active {
+	background-color: #04aa6d;
+	color: white;
+}
+
+.btn-wrapper {
+	padding-left: 200px;
+	padding-top: 100px;
+	width: 50%;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+/* login and Register css */
+
+h1 {
+	font-family: 'PT Sans';
+	font-weight: 700;
+	font-size: 32px;
+	color: #393a4a;
+	text-align: center;
+}
+
+.content {
+	display: flex, inline-block;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	justify-content: center;
+}
+
+.content .login-title h2 {
+	font-family: 'Roboto';
+	font-weight: bold;
+	font-size: 14px;
+	color: #393a4a;
+}
+
+.content .placeholder {
+	font-family: 'PT Sans';
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 150%;
+	color: #6b778c;
+}
+
+.content .hidden-image {
+	margin-left: -10%;
+}
+
+.content .box {
+	border: 4px solid #e7e7ed;
+	border-radius: 3px;
+	width: 344px;
+	height: 52px;
+	font-family: 'PT Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+	color: #393a4a;
+}
+
+.content .login-button,
+.content .reg-button {
+	padding: 16px;
+	width: 344px;
+	background: green;
+	border-radius: 8px;
+	margin-top: 32px;
+	color: white;
+	border: none;
+	font-family: 'Outfit';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 150%;
+}
+
+/* modal ccs */
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: max-content;
+	border-radius: 0px;
+	position: relative;
+}
+.cancel-img {
+	cursor: pointer;
+	width: 30px;
+	position: absolute;
+	right: 20px;
+}
+
+.add-btn {
+	background-color: #04aa6d;
+	border-radius: 8px;
+	color: white;
+	padding: 16px;
+	width: 120px;
+	border: none;
+	font-family: 'Outfit';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 150%;
+}
+
+.btn-wrapper .text-input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	border: 2px solid #2e2e31;
+	font-family: 'PT Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+	color: #393a4a;
+	padding: 10px;
+}
+.btn-wrapper .text-input::placeholder {
+	color: #6b778c;
+}
+
+.items {
+	padding-left: 20%;
+}
+.items h2 {
+	font-family: 'pt sans';
+	font-weight: bold;
+	font-size: 30px;
+	color: green;
+	padding-left:20%;
+
+}
+.card {
+	width: 60%;
+	height: 100%;
+	padding: 10px;
+	border-radius: 8px;
+	background-color: #fff;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 5px;
+}
+
+.card .options{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 5px;
+}
+
+.card .text-input{
+	width: 100%;
+	height: 100%;
+	border: none;
+	border: 0px solid #2e2e31;
+	font-family: 'PT Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+	color: #393a4a;
+	padding: 10px;
+}
+
