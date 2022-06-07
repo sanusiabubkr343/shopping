@@ -5,24 +5,14 @@ window.addEventListener('load', () => {
   const addButton = document.querySelector('.add-btn');
   const modal_el = document.querySelector('.modal')
   const modal_content_el = document.querySelector('.modal-content')
-  const items_el = document.querySelector('.items')
+  const add_input_el = document.querySelector('.btn-wrapper  .text-input');
+  const list_el = document.querySelector('.items');
 
 
 
 
-  const shoplistHTML = `
-  
-   <div class="card">
-      <input class="text-input" type="text" readonly >
-      <div class="options">
-        <img src="./thumbnails/icons8-edit-32.png"  class='edit-btn' alt="">
-        <img src="./thumbnails/icons8-delete-30.png" class='delete-btn'  alt="">
-      </div>
-    
-    </div>
-   
 
-`
+
 
 
   const registerHTML = `
@@ -161,6 +151,9 @@ window.addEventListener('load', () => {
 
 
 
+
+
+
   login_el.addEventListener('click', (e) => {
 
 
@@ -211,33 +204,20 @@ window.addEventListener('load', () => {
 
 
   addButton.addEventListener('click', (e) => {
-    const input_text_el = document.querySelector(' .btn-wrapper text-input');
-    items_el.innerHTML += shoplistHTML;
-    let data = input_text_el.value;
-    let text_input = document.querySelector('.card .item-input');
-    edit_btn = document.querySelector('.edit-btn');
-    delete_btn = document.querySelector('.delete-btn');
-    text_input.value = data;
-    console.log(data);
+    const data_item = add_input_el.value;
 
-    edit_btn.addEventListener('click', (e) => {         // edit button
-      document.getElementById('item-input').removeAttribute('readonly');
+    if (!data_item) {
+      alert('please fill in all fields');
+    }
+    else {
 
-      console.log("edit button clicked")
-    })
+      display_item(data_item);
+      add_input_el.value = '';
 
-    delete_btn.addEventListener('click', (e) => {         // delete  
+    }
 
-      console.log("delete button clicked")
-    })
 
   })
-
-
-
-
-
-
 
 
 
@@ -248,6 +228,53 @@ window.addEventListener('load', () => {
 
     modal_el.style.display = 'block';
     modal_content_el.innerHTML = content;
+
+  }
+
+
+
+  display_item = (data) => {
+    const item_el = document.createElement('div');
+    item_el.classList.add('card');
+    const input_el = document.createElement('input');
+    input_el.classList.add('text-input');
+    input_el.setAttribute('readonly', 'true');
+    input_el.value = data;
+    const options_el = document.createElement('div');
+    options_el.classList.add('options');
+    const edit_btn_el = document.createElement('img');
+    edit_btn_el.classList.add('edit-btn');
+    edit_btn_el.src = './thumbnails/icons8-edit-32.png';
+    const delete_btn_el = document.createElement('img');
+    delete_btn_el.classList.add('delete-btn');
+    delete_btn_el.src = './thumbnails/icons8-delete-30.png';
+    options_el.appendChild(edit_btn_el);
+    options_el.appendChild(delete_btn_el);
+    item_el.appendChild(input_el);
+    item_el.appendChild(options_el);
+    list_el.appendChild(item_el);
+  
+// set on click listeners
+    edit_btn_el.addEventListener('click', (e) => {
+      const input_el = e.target.parentElement.parentElement.firstElementChild;
+      input_el.removeAttribute('readonly');
+      input_el.focus();
+      input_el.addEventListener('blur', (e) => {
+        e.target.setAttribute('readonly', 'true');
+      })
+    })
+
+    delete_btn_el.addEventListener('click', (e) => {
+      e.target.parentElement.parentElement.remove();
+    })
+
+
+    
+      
+
+
+
+
   }
 
 
